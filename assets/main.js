@@ -22,13 +22,45 @@ const images = [
     }
 ];
 
+console.log(images)
+
 
 const prev = document.querySelector('.indietro');
 const next = document.querySelector('.avanti');
+const cardImg = document.querySelector('.card-sx');
+const imgContainer = document.getElementById("img-container");
+const imgDefault = document.getElementById("imgDefault");
+let z = 0;
+const pathImg = "./assets/";
 
 
 prev.addEventListener("click", function(){
     indietro()
 })
 
-indietro()
+function indietro(){
+
+    imgDefault.remove();
+
+    if(z == 4){
+
+        z=0
+
+    }else{
+        z++
+    }
+    console.log(images[z]['image'])
+
+    cardImg.innerHTML += `<img src="${pathImg}${images[z+1]['image']}" alt="" class="imgDefault">`
+
+}
+
+// next.addEventListener("click", function(){
+//     avanti()
+// })
+
+// function avanti(){
+
+
+
+// }
